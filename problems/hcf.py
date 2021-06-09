@@ -1,4 +1,4 @@
-def euclidean_gcd(num1, num2):
+def euclidean_gcd(num1: int, num2: int) -> int:
     """
     Calculates the highest common factor or greatest common divisor between two numbers.
     As the euclidean algorithm states:
