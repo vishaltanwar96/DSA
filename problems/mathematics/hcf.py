@@ -11,9 +11,7 @@ def euclidean_gcd(num1: int, num2: int) -> int:
     https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
     """
 
-    if num1 == 0:
-        return num2
-    elif num2 == 0:
+    if num2 == 0:
         return num1
     else:
         if num1 < num2:
