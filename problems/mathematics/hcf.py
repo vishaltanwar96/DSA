@@ -9,6 +9,7 @@ def euclidean_gcd(num1: int, num2: int) -> int:
     GCD(Dividend, Divisor) = GCD(Divisor, Remainder)
     Algorithm Explanation At:
     https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
+    https://www.cuemath.com/numbers/hcf-highest-common-factor/ (Properties and methods to calculate HCF)
     Also to calculate the GCD of multiple numbers, we can use this:
     GCD(a, b, c, d, e...) = GCD(GCD(GCD(GCD(a, b), c), d), e...)
     """
