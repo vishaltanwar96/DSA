@@ -21,6 +21,7 @@ def euclidean_gcd(num1: int, num2: int) -> int:
 
 
 def gcd_multiple_nums(*numbers: int) -> int:
+    """GCD of 0 and the number is equal to the number itself hence we can start off of that and build the result"""
 
     def _gcd(a: int, b: int) -> int:
 
