@@ -9,11 +9,28 @@ def euclidean_gcd(num1: int, num2: int) -> int:
     GCD(Dividend, Divisor) = GCD(Divisor, Remainder)
     Algorithm Explanation At:
     https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
+    Also to calculate the GCD of multiple numbers, we can use this:
+    GCD(a, b, c, d, e...) = GCD(GCD(GCD(GCD(a, b), c), d), e...)
     """
 
+    if num1 < num2:
+        num1, num2 = num2, num1
     if num2 == 0:
         return num1
-    else:
-        if num1 < num2:
-            num1, num2 = num2, num1
-        return euclidean_gcd(num2, num1 % num2)
+    return euclidean_gcd(num2, num1 % num2)
+
+
+def gcd_multiple_nums(*numbers: int) -> int:
+
+    def _gcd(a: int, b: int) -> int:
+
+        if a < b:
+            a, b, = b, a
+        if b == 0:
+            return a
+        return _gcd(b, a % b)
+
+    result = 0
+    for number in numbers:
+        result = _gcd(result, number)
+    return result
