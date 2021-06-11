@@ -4,6 +4,7 @@ Properties of LCM
 - LCM * GCD = Number 1 * Number 2
 - LCM between two consecutive numbers is num1 * num2 itself
 - LCM(a, b, c, d, e...) = LCM(LCM(LCM(LCM(a, b), c), d), e...)
+https://www.cuemath.com/learn/Mathematics/lowest-common-multiple/
 """
 from mathematics.hcf import euclidean_gcd
 
