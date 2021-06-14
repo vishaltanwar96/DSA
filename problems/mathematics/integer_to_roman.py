@@ -1,5 +1,6 @@
 def int_to_roman(num: int) -> str:
     """
+    number is represented as its place value i.e. 5469 = 5000 + 400 + 60 + 9
     Conversion is supported till 9999.
     A helper hashmap is needed to map values to a string representation of that number in roman.
     For converting a number to roman number we follow a simple stategy.
@@ -29,17 +30,17 @@ def int_to_roman(num: int) -> str:
     roman_number = ''
 
     while num > 0:
-        digit = num % 10
-        face_value = digit * (10 ** multiplier)
+        face_value = num % 10
+        place_value = face_value * (10 ** multiplier)
 
-        if face_value in number_roman_string_map:
-            roman_number = number_roman_string_map[face_value] + roman_number
-        elif 5 < digit < 9:
-            leftover = digit - 5
+        if place_value in number_roman_string_map:
+            roman_number = number_roman_string_map[place_value] + roman_number
+        elif 5 < face_value < 9:
+            leftover = face_value - 5
             roman_number = number_roman_string_map[10 ** multiplier] * leftover + roman_number
             roman_number = number_roman_string_map[5 * (10 ** multiplier)] + roman_number
         else:
-            roman_number = number_roman_string_map[10 ** multiplier] * digit + roman_number
+            roman_number = number_roman_string_map[10 ** multiplier] * face_value + roman_number
 
         num //= 10
         multiplier += 1
