@@ -15,6 +15,7 @@ class LinkedList:
     def __init__(self, head):
 
         self.head = head
+        self._count = 1
 
     def prepend(self, data):
 
@@ -22,6 +23,20 @@ class LinkedList:
         current_head = self.head
         self.head = node
         self.head.next_node = current_head
+        self._count += 1
+
+    def pop(self):
+
+        to_pop = self.head
+        if to_pop is None:
+            raise IndexError('Cannot pop from empty LinkedList')
+        self.head = to_pop.next_node
+        self._count -= 1
+        return to_pop
+
+    def __len__(self):
+
+        return self._count
 
     def __reversed__(self):
 
