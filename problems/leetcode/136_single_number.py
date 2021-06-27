@@ -5,10 +5,18 @@ def single_number(nums: list[int]) -> int:
     You must implement a solution with a linear runtime complexity and use only constant extra space
 
     Solution 1:
-    Loop on the array and store the count of each number in a dictionary.
-    Loop on the dictionary and return the number whose count is 1.
+    Loop on the array and start to store the count of each digit in the dictionary, if the count for any number becomes
+    greater than 1 simply pop the number. At the end there will only be 1 key value pair. The key is the answer.
     Time complexity = O(n)
     Space complexity = O(n)
+    >>> number_count_map = {}
+    >>> for number in nums:
+    ...     if num in number_count_map:
+    ...         number_count_map.pop(num)
+    ...     else:
+    ...         number_count_map[num] = 1
+    >>> for single_left_number in number_count_map:
+    ...     return single_left_number
 
     Solution 2:
     Initialize a variable with value 0. Loop the array and xor the number with the result and store it back in result.
