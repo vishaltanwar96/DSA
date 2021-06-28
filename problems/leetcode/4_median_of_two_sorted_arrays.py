@@ -6,8 +6,9 @@ def find_median_sorted_arrays(nums1: list[int], nums2: list[int]) -> float:
     Solution 1(Naive):
     Initialize a third array. Take a pointer at starting of each array. Now compare the elements of the two arrays at
     respective pointer positions. Pointers are there to help us insert the lower value of the two values in comparison.
-    Insert the lower value in the array. Now if the array length is odd simply return the len(array) // 2 index element
-    and if it's even then sum of element at index len(array) // 2 and (len(array) // 2) - 1 and sum / 2 is returned.
+    Insert the lower value in the third array. Now if the length of third array is odd simply return the
+    len(array) // 2 index element and if it's even then sum of element at
+    index len(array) // 2 and (len(array) // 2) - 1 is divided by 2 and returned.
     Time Complexity: O(m+n)
     Space Complexity: O(m+n)
     """
