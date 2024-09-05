@@ -3,3 +3,12 @@ def pattern1(n: int) -> None:
         for column in range(n):
             print("*", end=" ")
         print()
+
+
+def pattern2(n: int) -> None:
+    for row in range(1, n+1):
+        for column in range(row):
+            print("*", end=" ")
+        for column in range(n - row):
+            print(" ", end=" ")
+        print()
