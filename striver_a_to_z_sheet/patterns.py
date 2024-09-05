@@ -39,3 +39,12 @@ def pattern5(n: int) -> None:
         for column in range(n - row):
             print(" ", end=" ")
         print()
+
+
+def pattern6(n: int) -> None:
+    for row in range(n, 0, -1):
+        for column in range(1, row + 1):
+            print(column, end=" ")
+        for column in range(n - row):
+            print(" ", end=" ")
+        print()
