@@ -12,3 +12,12 @@ def pattern2(n: int) -> None:
         for column in range(n - row):
             print(" ", end=" ")
         print()
+
+
+def pattern3(n: int) -> None:
+    for row in range(1, n+1):
+        for column in range(1, row+1):
+            print(str(column), end=" ")
+        for column in range(n - row):
+            print(" ", end=" ")
+        print()
